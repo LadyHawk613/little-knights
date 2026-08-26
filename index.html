@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #FFF5E1;
-    --cream-deep: #FFE5B4;
-    --navy: #1B2A4A;
-    --navy-soft: #394B75;
-    --gold: #FFB703;
-    --coral: #FF5964;
-    --mint: #2EC4B6;
-    --sky: #3A86EF;
-    --grape: #8338EC;
-    --pink: #FF006E;
-    --shadow: rgba(27, 42, 74, 0.25);
+    --cream: #2C1A4A;        /* Deep mystical purple background */
+    --cream-deep: #3F2B68;   /* Lighter magical purple for depth */
+    --navy: #FFF5E1;         /* Warm cream text color for contrast */
+    --navy-soft: #D8B4FE;    /* Soft lavender for subtitles */
+    --gold: #FFD700;         /* Glowing magical gold */
+    --coral: #FF758F;        /* Bright magical pink/coral */
+    --mint: #38BDF8;         /* Magical ethereal blue */
+    --sky: #818CF8;          /* Indigo accent */
+    --grape: #C084FC;        /* Bright purple accent */
+    --pink: #F472B6;         /* Bright pink accent */
+    --shadow: rgba(0, 0, 0, 0.4); /* Deeper shadow for contrast */
   }
 
   *{ box-sizing: border-box; }
@@ -48,14 +48,14 @@
     flex: 1;
     height: 100%;
   }
-  .checker-strip span:nth-child(odd){ background: var(--navy); }
-  .checker-strip span:nth-child(even){ background: var(--gold); }
+  .checker-strip span:nth-child(odd){ background: var(--gold); }
+  .checker-strip span:nth-child(even){ background: var(--grape); }
 
   /* ---------- Hero ---------- */
   .hero{
     padding: 10px 20px 0;
     text-align: center;
-    background: radial-gradient(circle at 50% 30%, rgba(255,183,3,0.3) 0, transparent 70%);
+    background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
     flex-shrink: 0;
   }
 
@@ -72,11 +72,6 @@
     height: auto;
     border-radius: 12px;
     filter: drop-shadow(0 6px 10px var(--shadow));
-    animation: bob 2.5s ease-in-out infinite;
-  }
-  @keyframes bob{
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
   }
 
   h1{
@@ -84,7 +79,7 @@
     font-weight: 800;
     font-size: clamp(2rem, 4.5vw, 3.2rem);
     margin: 0;
-    color: var(--navy);
+    color: var(--gold);
     line-height: 1.1;
   }
   h1 .accent{ color: var(--coral); }
@@ -121,7 +116,7 @@
     gap: 14px;
     text-decoration: none;
     color: var(--navy);
-    background: #ffffff;
+    background: var(--cream-deep);
     border: 3px solid var(--card-color, var(--gold));
     border-radius: 18px;
     padding: 14px 18px;
@@ -149,7 +144,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2);
   }
   .activity-btn .icon-wrap svg{ width: 28px; height: 28px; fill: #ffffff; }
 
@@ -210,11 +205,11 @@
   <!-- Top Hero Header with Title and Mascot -->
   <header class="hero">
     <div class="mascot-container">
-      <!-- Replaced SVG with your knight-image.jpg while keeping the bobbing animation -->
+      <!-- Your static knight image replacing the mascot with animation removed -->
       <img src="knight-image.jpg" alt="Knight Mascot" class="mascot">
       <div>
         <h1>Little Knights <span class="accent">Chess Club</span></h1>
-        <p class="subtitle">Pick an activity below and let's start our chess adventure! ♞</p>
+        <p class="subtitle">Pick an activity below and let's start our magical chess adventure! ♞</p>
       </div>
     </div>
   </header>
@@ -281,7 +276,7 @@
       <!-- Activity 6 -->
       <a class="activity-btn c6" href="#">
         <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 9h6M8 13h8" stroke="#FF006E" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 9h6M8 13h8" stroke="#F472B6" stroke-width="1.8" stroke-linecap="round"/></svg>
         </span>
         <div class="text-content">
           <span>Story Time</span>
@@ -293,7 +288,7 @@
   </main>
 
   <footer>
-    Have fun and think like a champion! ♟️
+    Have fun and think like a wizard champion! ✨♟️
   </footer>
 
   <!-- Bottom Checker Strip -->
