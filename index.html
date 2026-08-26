@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #2C1A4A;        /* Deep mystical purple background */
-    --cream-deep: #3F2B68;   /* Lighter magical purple for depth */
-    --navy: #FFF5E1;         /* Warm cream text color for contrast */
-    --navy-soft: #D8B4FE;    /* Soft lavender for subtitles */
-    --gold: #FFD700;         /* Glowing magical gold */
-    --coral: #FF758F;        /* Bright magical pink/coral */
-    --mint: #38BDF8;         /* Magical ethereal blue */
-    --sky: #818CF8;          /* Indigo accent */
-    --grape: #C084FC;        /* Bright purple accent */
-    --pink: #F472B6;         /* Bright pink accent */
-    --shadow: rgba(0, 0, 0, 0.4); /* Deeper shadow for contrast */
+    --cream: #2C1A4A;        
+    --cream-deep: #3F2B68;   
+    --navy: #FFF5E1;         
+    --navy-soft: #D8B4FE;    
+    --gold: #FFD700;         
+    --coral: #FF758F;        
+    --mint: #38BDF8;         
+    --sky: #818CF8;          
+    --grape: #C084FC;        
+    --pink: #F472B6;         
+    --shadow: rgba(0, 0, 0, 0.4); 
   }
 
   *{ box-sizing: border-box; }
@@ -37,132 +37,33 @@
     justify-content: space-between;
   }
 
-  /* ---------- Decorative checker strip ---------- */
-  .checker-strip{
-    display: flex;
-    width: 100%;
-    height: 12px;
-    flex-shrink: 0;
-  }
-  .checker-strip span{
-    flex: 1;
-    height: 100%;
-  }
+  .checker-strip{ display: flex; width: 100%; height: 12px; flex-shrink: 0; }
+  .checker-strip span{ flex: 1; height: 100%; }
   .checker-strip span:nth-child(odd){ background: var(--gold); }
   .checker-strip span:nth-child(even){ background: var(--grape); }
 
-  /* ---------- Hero ---------- */
-  .hero{
-    padding: 10px 20px 0;
-    text-align: center;
-    background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
-    flex-shrink: 0;
-  }
-
-  .mascot-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 5px;
-  }
-
-  .mascot{
-    width: 75px;
-    height: auto;
-    border-radius: 12px;
-    filter: drop-shadow(0 6px 10px var(--shadow));
-  }
-
-  h1{
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    margin: 0;
-    color: var(--gold);
-    line-height: 1.1;
-  }
+  .hero{ padding: 10px 20px 0; text-align: center; background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 70%); flex-shrink: 0; }
+  .mascot-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 5px; }
+  .mascot{ width: 65px; height: auto; border-radius: 12px; filter: drop-shadow(0 6px 10px var(--shadow)); }
+  h1{ font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0; color: var(--gold); line-height: 1.1; }
   h1 .accent{ color: var(--coral); }
+  .subtitle{ font-size: clamp(0.9rem, 2vw, 1.05rem); font-weight: 800; color: var(--navy-soft); margin: 4px 0 0; }
 
-  .subtitle{
-    font-size: clamp(0.95rem, 2vw, 1.15rem);
-    font-weight: 800;
-    color: var(--navy-soft);
-    margin: 4px 0 0;
-  }
-
-  /* ---------- Activities ---------- */
-  .activities{
-    max-width: 950px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+  .activities{ max-width: 950px; width: 100%; margin: 0 auto; padding: 0 16px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+  .grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 
   .activity-btn{
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-    color: var(--navy);
-    background: var(--cream-deep);
-    border: 3px solid var(--card-color, var(--gold));
-    border-radius: 18px;
-    padding: 14px 18px;
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    cursor: pointer;
+    display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--navy);
+    background: var(--cream-deep); border: 3px solid var(--card-color, var(--gold)); border-radius: 18px;
+    padding: 12px 16px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 1.15rem; cursor: pointer;
     box-shadow: 0 5px 0 var(--card-color, var(--gold)), 0 8px 15px var(--shadow);
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    transition: transform 0.12s ease;
   }
-  .activity-btn:hover{
-    transform: translateY(-3px);
-  }
-  .activity-btn:active{
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 var(--card-color, var(--gold)), 0 4px 8px var(--shadow);
-  }
-
-  .activity-btn .icon-wrap{
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--card-color, var(--gold));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2);
-  }
-  .activity-btn .icon-wrap svg{ width: 28px; height: 28px; fill: #ffffff; }
-
-  .text-content {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-
-  .activity-btn .tag{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--card-color, var(--gold));
-    margin-top: 3px;
-  }
+  .activity-btn:hover{ transform: translateY(-3px); }
+  .activity-btn .icon-wrap{ width: 45px; height: 45px; flex-shrink: 0; border-radius: 50%; background: var(--card-color, var(--gold)); display: flex; align-items: center; justify-content: center; }
+  .activity-btn .icon-wrap svg{ width: 24px; height: 24px; fill: #ffffff; }
+  .text-content { display: flex; flex-direction: column; line-height: 1.1; }
+  .activity-btn .tag{ font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: var(--card-color, var(--gold)); margin-top: 3px; }
 
   .c1{ --card-color: var(--coral); }
   .c2{ --card-color: var(--mint); }
@@ -171,30 +72,35 @@
   .c5{ --card-color: var(--grape); }
   .c6{ --card-color: var(--pink); }
 
-  footer{
-    text-align: center;
-    padding: 10px 20px 16px;
-    color: var(--navy-soft);
-    font-weight: 800;
-    font-size: 1rem;
-    flex-shrink: 0;
+  /* Game Modal Styles */
+  #game-modal {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+    z-index: 100; align-items: center; justify-content: center; padding: 20px;
   }
+  .game-card {
+    background: var(--cream-deep); border: 4px solid var(--sky); border-radius: 20px;
+    padding: 20px; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 10px 25px var(--shadow);
+  }
+  .chess-board {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; background: #1a0f2e;
+    padding: 8px; border-radius: 10px; margin: 15px auto; width: 260px; height: 260px;
+  }
+  .square {
+    background: #4c3575; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; border-radius: 6px; cursor: pointer; user-select: none;
+  }
+  .square.highlight { background: #68d391; box-shadow: inset 0 0 10px rgba(0,0,0,0.3); }
+  .game-btn {
+    background: var(--sky); color: #fff; border: none; padding: 8px 16px; font-weight: 800;
+    border-radius: 8px; cursor: pointer; font-family: 'Baloo 2', sans-serif; font-size: 1rem; margin-top: 10px;
+  }
+  .close-btn { background: var(--coral); margin-left: 10px; }
 
-  @media (max-width: 768px) {
-    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .activity-btn { padding: 10px 14px; font-size: 1.1rem; }
-    .activity-btn .icon-wrap { width: 42px; height: 42px; }
-    .activity-btn .icon-wrap svg { width: 22px; height: 22px; }
-  }
-
-  @media (max-width: 480px) {
-    .grid { grid-template-columns: 1fr; }
-  }
+  footer{ text-align: center; padding: 10px 20px 16px; color: var(--navy-soft); font-weight: 800; font-size: 0.95rem; flex-shrink: 0; }
 </style>
 </head>
 <body>
 
-  <!-- Top Checker Strip -->
   <div class="checker-strip">
     <span></span><span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -202,10 +108,8 @@
     <span></span><span></span>
   </div>
 
-  <!-- Top Hero Header with Title and Mascot -->
   <header class="hero">
     <div class="mascot-container">
-      <!-- Your static knight image replacing the mascot with animation removed -->
       <img src="knight-image.jpg" alt="Knight Mascot" class="mascot">
       <div>
         <h1>Little Knights <span class="accent">Chess Club</span></h1>
@@ -214,84 +118,52 @@
     </div>
   </header>
 
-  <!-- Main Grid Container (No Scrolling) -->
   <main class="activities">
     <div class="grid">
-
-      <!-- Activity 1 -->
       <a class="activity-btn c1" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M7 20h10l1-3H6l1 3z"/><path d="M8.5 17h7l1-6-3-2 2-3-3-2-2 3-3-2-2 3 1 3 2 6z"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Meet Pieces</span>
-          <span class="tag">Learn</span>
-        </div>
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M7 20h10l1-3H6l1 3z"/><path d="M8.5 17h7l1-6-3-2 2-3-3-2-2 3-3-2-2 3 1 3 2 6z"/></svg></span>
+        <div class="text-content"><span>Meet Pieces</span><span class="tag">Learn</span></div>
       </a>
-
-      <!-- Activity 2 -->
       <a class="activity-btn c2" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="#fff" stroke-width="2"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Puzzle Time</span>
-          <span class="tag">Practice</span>
-        </div>
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="#fff" stroke-width="2"/></svg></span>
+        <div class="text-content"><span>Puzzle Time</span><span class="tag">Practice</span></div>
       </a>
-
-      <!-- Activity 3 -->
-      <a class="activity-btn c3" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M12 3c1 3-1 4-1 6s3 2 3 5-3 5-3 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="12" cy="20" r="1.6"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Knight's Maze</span>
-          <span class="tag">Game</span>
-        </div>
+      <!-- Knight's Maze Button Triggers the Game -->
+      <a class="activity-btn c3" href="javascript:void(0);" onclick="openGame()">
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 3c1 3-1 4-1 6s3 2 3 5-3 5-3 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="12" cy="20" r="1.6"/></svg></span>
+        <div class="text-content"><span>Knight's Maze</span><span class="tag">Game</span></div>
       </a>
-
-      <!-- Activity 4 -->
       <a class="activity-btn c4" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M6 20h12l1-3H5l1 3z"/><path d="M8 17h8l1-9-5-4-5 4 1 9z"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Checkmate</span>
-          <span class="tag">Play</span>
-        </div>
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M6 20h12l1-3H5l1 3z"/><path d="M8 17h8l1-9-5-4-5 4 1 9z"/></svg></span>
+        <div class="text-content"><span>Checkmate</span><span class="tag">Play</span></div>
       </a>
-
-      <!-- Activity 5 -->
       <a class="activity-btn c5" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Chess Bingo</span>
-          <span class="tag">Game</span>
-        </div>
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></span>
+        <div class="text-content"><span>Chess Bingo</span><span class="tag">Game</span></div>
       </a>
-
-      <!-- Activity 6 -->
       <a class="activity-btn c6" href="#">
-        <span class="icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 9h6M8 13h8" stroke="#F472B6" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </span>
-        <div class="text-content">
-          <span>Story Time</span>
-          <span class="tag">Read</span>
-        </div>
+        <span class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 9h6M8 13h8" stroke="#F472B6" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div class="text-content"><span>Story Time</span><span class="tag">Read</span></div>
       </a>
-
     </div>
   </main>
+
+  <!-- Interactive Game Overlay Modal -->
+  <div id="game-modal">
+    <div class="game-card">
+      <h2 style="margin:0; color:var(--gold); font-family:'Baloo 2';">Knight's Maze</h2>
+      <p id="game-status" style="margin:5px 0; font-size:0.9rem; color:var(--navy-soft);">Hop to the jewels (💎)!</p>
+      <div class="chess-board" id="board"></div>
+      <p style="margin:5px 0; font-weight:800;">Jewels Collected: <span id="score">0</span> / 4</p>
+      <button class="game-btn" onclick="resetGame()">Restart</button>
+      <button class="game-btn close-btn" onclick="closeGame()">Close</button>
+    </div>
+  </div>
 
   <footer>
     Have fun and think like a wizard champion! ✨♟️
   </footer>
 
-  <!-- Bottom Checker Strip -->
   <div class="checker-strip">
     <span></span><span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -299,5 +171,100 @@
     <span></span><span></span>
   </div>
 
+<script>
+  let knightPos = [2, 2];
+  let jewels = [];
+  let score = 0;
+  const size = 5;
+  const totalJewels = 4;
+
+  function openGame() {
+    document.getElementById('game-modal').style.display = 'flex';
+    resetGame();
+  }
+
+  function closeGame() {
+    document.getElementById('game-modal').style.display = 'none';
+  }
+
+  function resetGame() {
+    knightPos = [2, 2];
+    score = 0;
+    jewels = [];
+    while(jewels.length < totalJewels) {
+      let r = Math.floor(Math.random() * size);
+      let c = Math.floor(Math.random() * size);
+      if((r !== 2 || c !== 2) && !jewels.some(j => j[0] === r && j[1] === c)) {
+        jewels.push([r, c]);
+      }
+    }
+    updateBoard();
+  }
+
+  function getLegalMoves(r, c) {
+    const offsets = [
+      [-2, -1], [-2, 1], [-1, -2], [-1, 2],
+      [1, -2], [1, 2], [2, -1], [2, 1]
+    ];
+    let legal = [];
+    for(let [dr, dc] of offsets) {
+      let nr = r + dr, nc = c + dc;
+      if(nr >= 0 && nr < size && nc >= 0 && nc < size) {
+        legal.push([nr, nc]);
+      }
+    }
+    return legal;
+  }
+
+  function updateBoard() {
+    const boardEl = document.getElementById('board');
+    boardEl.innerHTML = '';
+    let legalMoves = getLegalMoves(knightPos[0], knightPos[1]);
+
+    for(let r = 0; r < size; r++) {
+      for(let c = 0; c < size; c++) {
+        const sq = document.createElement('div');
+        sq.className = 'square';
+        
+        let isKnight = (knightPos[0] === r && knightPos[1] === c);
+        let jewelIndex = jewels.findIndex(j => j[0] === r && j[1] === c);
+        let isLegal = legalMoves.some(m => m[0] === r && m[1] === c);
+
+        if(isKnight) {
+          sq.innerHTML = '♞';
+        } else if(jewelIndex !== -1) {
+          sq.innerHTML = '💎';
+        }
+
+        if(isLegal) {
+          sq.classList.add('highlight');
+          sq.onclick = () => makeMove(r, c);
+        }
+
+        boardEl.appendChild(sq);
+      }
+    }
+
+    document.getElementById('score').innerText = score;
+    
+    let statusText = "Hop to the jewels!";
+    if(score === totalJewels) {
+      statusText = "🎉 Victory! All jewels collected!";
+    } else if(legalMoves.length === 0) {
+      statusText = "🚫 Game Over! No moves left.";
+    }
+    document.getElementById('game-status').innerText = statusText;
+  }
+
+  function makeMove(r, c) {
+    knightPos = [r, c];
+    let jewelIndex = jewels.findIndex(j => j[0] === r && j[1] === c);
+    if(jewelIndex !== -1) {
+      jewels.splice(jewelIndex, 1);
+      score++;
+    }
+    updateBoard();
+  }
+</script>
 </body>
 </html>
